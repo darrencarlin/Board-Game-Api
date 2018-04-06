@@ -4,7 +4,8 @@
       "name":"",
       "description":"",
       "image":"",
-      "categories":"",
+      "type":"",
+      "genre":"",
       "idealFor":"",
       "players":{  
          "playersIdeal":0,
@@ -19,6 +20,7 @@
       },
       "yearPublished":0,
       "rank":0,
-      "rating":0
+      "rating":0,
+      "location": "Cork"
    }
 ]
