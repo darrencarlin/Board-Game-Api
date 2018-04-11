@@ -28,7 +28,7 @@
     "description": "Dead of Winter: A Crossroads Game, the first game in this series, puts 2-5 players in a small, weakened colony of survivors in a world where most of humanity is either dead or diseased, flesh-craving monsters. Each player leads a faction of survivors with dozens of different characters in the game.",
     "image": "http://www.tabletop.com/images/games/deadofwinter.jpg",
     "type": ["Board", "Card", "Dice", "Co-operative", "Bluffing", "Storytelling", "Voting", "Trading"],
-    "genre": ["Zombie", "Survival", "Horror", "Post-Apocalyptic", "Trivia"],
+    "genre": ["Zombie", "Survival", "Horror", "Post-Apocalyptic"],
     "idealFor": ["Groups"],
     "players": {
         "playersIdeal": 4,
