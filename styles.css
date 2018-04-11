@@ -1,0 +1,17 @@
+﻿/* Reset */
+
+*,
+*::after,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.app {
+    width: 50%;
+    height: 400px;
+    margin: 25px auto;
+    border: 2px solid #ccc;
+}
