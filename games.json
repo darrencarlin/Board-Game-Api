@@ -1,27 +1,49 @@
-[  
-   {  
-      "id":98,
-      "name":"Dead Of Winter",
-      "description": "Dead of Winter: A Crossroads Game, the first game in this series, puts 2-5 players in a small, weakened colony of survivors in a world where most of humanity is either dead or diseased, flesh-craving monsters. Each player leads a faction of survivors with dozens of different characters in the game.",
-      "image":"http://www.tabletop.com/images/games/deadofwinter.jpg",
-      "type":["Board","Card","Dice","Co-operative","Bluffing","Storytelling","Voting","Trading"],
-      "genre":["Zombie", "Survival","Horror","Post-Apocalyptic"],
-      "idealFor":["Groups"],
-      "players":{  
-         "playersIdeal":4,
-         "playersMin":2,
-         "playersMax":5
-      },
-      "age": 12,
-      "difficulty":"Medium",
-      "time":{  
-         "setupTime":5,
-         "playTime":60
-      },
-      "yearPublished":2014,
-	  "Publisher": ["Plaid Hat Games"],
-      "rank":0,
-      "rating":0,
-      "location": "Cork"
-   }
-]
+[{
+    "id": 1,
+    "name": "30 Seconds",
+    "description": "At first glance the South African game 30 Seconds looks a bit like Trivial Pursuit. Players play in teams of two. Every turn, a player takes a card with five famous names on them, and tries to describe those names to his partner, who tries to guess what is being described. The goal is to guess as many words as possible in, you guessed it, 30 seconds.",
+    "image": "http://www.tabletop.com/images/games/30seconds.jpg",
+    "type": ["Board", "Card", "Dice", "Co-operative"],
+    "genre": ["Trivia"],
+    "idealFor": ["Groups", "Family"],
+    "players": {
+        "playersIdeal": 6,
+        "playersMin": 2,
+        "playersMax": 16
+    },
+    "age": 8,
+    "difficulty": "Easy",
+    "time": {
+        "setupTime": 1,
+        "playTime": 60
+    },
+    "yearPublished": 2010,
+    "publisher": ["999 Games", "Calco Games", "Kiwi Games"],
+    "rank": 0,
+    "rating": 0,
+    "location": "Cork"
+}, {
+    "id": 2,
+    "name": "Dead Of Winter Expansion",
+    "description": "Dead of Winter: A Crossroads Game, the first game in this series, puts 2-5 players in a small, weakened colony of survivors in a world where most of humanity is either dead or diseased, flesh-craving monsters. Each player leads a faction of survivors with dozens of different characters in the game.",
+    "image": "http://www.tabletop.com/images/games/deadofwinter.jpg",
+    "type": ["Board", "Card", "Dice", "Co-operative", "Bluffing", "Storytelling", "Voting", "Trading"],
+    "genre": ["Zombie", "Survival", "Horror", "Post-Apocalyptic", "Trivia"],
+    "idealFor": ["Groups"],
+    "players": {
+        "playersIdeal": 4,
+        "playersMin": 2,
+        "playersMax": 5
+    },
+    "age": 12,
+    "difficulty": "Medium",
+    "time": {
+        "setupTime": 5,
+        "playTime": 60
+    },
+    "yearPublished": 2014,
+    "publisher": ["Plaid Hat Games"],
+    "rank": 0,
+    "rating": 0,
+    "location": "Cork"
+}]
