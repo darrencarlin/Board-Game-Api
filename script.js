@@ -22,7 +22,7 @@ let typeFinal;
 // ES6 way of making an ajax call - These work on 'promises' which I fully understand yet.
 let data;
 
-fetch('http://darrencarlin.com/games.json')
+fetch('https://darrencarlin.com/games.json')
     .then(function (response) {
         return response.json();
     })
