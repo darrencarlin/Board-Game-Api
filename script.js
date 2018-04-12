@@ -12,14 +12,8 @@ let genres = [];
 let ideal = [];
 let players = [];
 let type = [];
-let genresFinal;
-let gamesFinal;
-let idealFinal;
-let playersFinal;
-let typeFinal;
 
-
-// ES6 way of making an ajax call - These work on 'promises' which I fully understand yet.
+// ES6 way of making an ajax call - These work on 'promises' which I don't fully understand yet.
 let data;
 
 fetch('https://darrencarlin.com/games.json')
@@ -31,7 +25,6 @@ fetch('https://darrencarlin.com/games.json')
         // This is a loop to console.log all games in sample, this will be the basis of any call to adjust the filter. 
         // forEach is basically taking the games variable which is an array of objects and doing something with them.
         // Usually this is used for arrays with objects inside for simple array use a regualr javascript for loop.
-
 
         data.forEach(function (game, index) {
 
@@ -53,30 +46,39 @@ fetch('https://darrencarlin.com/games.json')
             // These next lines are taking each item (genre, name, idealFor, players) from each game 
             // and putting them into their own array.
 
-            genres.push(game.genre);
-            games.push(game.name);
-            ideal.push(game.idealFor);
-            players.push(game.players.playersMin);
-            players.push(game.players.playersMax);
-            type.push(game.type);
-
+			
+			// Games
+			
+			games.push(game.name);
+			games = flatten(games);
+			
+			// Genres 
+			
+			genres.push(game.genre);
+		    genres = flattenSort(genres);
+			
+			// Ideal 
+			
+			 ideal.push(game.idealFor);
+			 ideal = flattenSort(ideal);
+			 
+			 // Players 
+			 
+			players.push(game.players.playersMax);
+			players = findMax(players);
+			
+			// Type 
+			
+			type.push(game.type);
+            type = flattenSort(type);
+				
             // Flattening & Sorting arrays (see functions below)
 
-            gamesFinal = flatten(games);
-            genresFinal = flattenSort(genres);
-            idealFinal = flattenSort(ideal);
-            playersFinal = findMax(players);
-            typeFinal = flattenSort(type);
+             
         });
 
-        // These logs are for testing
-
-        // console.log(gamesFinal);
-        // console.log(genresFinal);
-        // console.log(idealFinal);
-        // console.log(playersFinal);
-
-        // These functions are flattening (merging) and sorting (removing duplicates) arrays
+        // These functions are flattening (merging) and sorting 
+		// (removing duplicates) arrays
 
         function flatten(arr) {
             return arr.reduce((a, b) => a.concat(b), [])
@@ -87,35 +89,36 @@ fetch('https://darrencarlin.com/games.json')
         }
 
         function findMax(arr) {
-            return Math.max(...arr);
+            return [Math.max(...arr)];
         }
 
-        // These loops are for populating the drop down menus in the HTML, we are using template strings which are 
-        // called 'back ticks' which are a little more convienet than normal string building.
+        // These loops are for populating the drop down menus in the HTML, we 
+		// are using template strings which are called 'back ticks' which are  
+		// a little more convienet than normal string building.
 
 
-        for (let i = 0; i < gamesFinal.length; i++) {
-            gamesList.innerHTML += `<option value="${gamesFinal[i]}"> ${gamesFinal[i]} </option>`;
+        for (let i = 0; i < games.length; i++) {
+            gamesList.innerHTML += `<option value="${games[i]}"> ${games[i]} </option>`;
 
         }
 
-        for (let i = 0; i < genresFinal.length; i++) {
-            genresList.innerHTML += `<option value="${genresFinal[i]}"> ${genresFinal[i]} </option>`;
+        for (let i = 0; i < genres.length; i++) {
+            genresList.innerHTML += `<option value="${genres[i]}"> ${genres[i]} </option>`;
         }
 
-        for (let i = 0; i < idealFinal.length; i++) {
-            idealList.innerHTML += `<option value="${idealFinal[i]}"> ${idealFinal[i]} </option>`;
+        for (let i = 0; i < ideal.length; i++) {
+            idealList.innerHTML += `<option value="${ideal[i]}"> ${ideal[i]} </option>`;
         }
 
-        for (let i = 1; i <= playersFinal; i++) {
+        for (let i = 2; i <= players; i++) {
             playerList.innerHTML += `<option value="${[i]}"> ${[i]} </option>`;
         }
 
-        for (let i = 1; i < typeFinal.length; i++) {
-            typeList.innerHTML += `<option value="${typeFinal[i]}"> ${typeFinal[i]} </option>`;
+        for (let i = 0; i < type.length; i++) {
+            typeList.innerHTML += `<option value="${type[i]}"> ${type[i]} </option>`;
         }
 
     })
     .catch(function (error) {
-        console.log(error.message);
+        console.log(error);
     });
