@@ -50,7 +50,6 @@ fetch('https://darrencarlin.com/games.json')
 			// Games
 			
 			games.push(game.name);
-			games = flatten(games);
 			
 			// Genres 
 			
@@ -59,8 +58,8 @@ fetch('https://darrencarlin.com/games.json')
 			
 			// Ideal 
 			
-			 ideal.push(game.idealFor);
-			 ideal = flattenSort(ideal);
+			ideal.push(game.idealFor);
+			ideal = flattenSort(ideal);
 			 
 			 // Players 
 			 
