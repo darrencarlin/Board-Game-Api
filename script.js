@@ -1,11 +1,12 @@
 
 let app = document.getElementById("app");
 
-let gamesList = document.getElementById("gamesList");
+let gamesList = document.getElementById("gamesList"); 
 let genresList = document.getElementById("genresList");
 let idealList = document.getElementById("idealList");
 let playerList = document.getElementById("playerList");
 let mechanicsList = document.getElementById("mechanicsList");
+let difficultyList = document.getElementById("difficultyList");
 
 let games = [];
 let genres = [];
