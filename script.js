@@ -5,16 +5,48 @@ let gamesList = document.getElementById("gamesList");
 let genresList = document.getElementById("genresList");
 let idealList = document.getElementById("idealList");
 let playerList = document.getElementById("playerList");
-let typeList = document.getElementById("typeList");
+let mechanicsList = document.getElementById("mechanicsList");
 
 let games = [];
 let genres = [];
 let ideal = [];
 let players = [];
-let type = [];
-
-// ES6 way of making an ajax call - These work on 'promises' which I don't fully understand yet.
+let mechanics = [];
+let difficulty = [];
 let data;
+
+
+let flatten = (arr) => {
+    return arr.reduce((a, b) => a.concat(b), [])
+}
+
+let flattenSort = (arr) => {
+    return [...new Set(arr.reduce((a, b) => a.concat(b), []))]
+}
+
+let findMax = (arr) => {
+   return [Math.max(...arr)]
+}
+
+let pushArr = (arr, json) => {
+     arr.push(json)
+     arr = flattenSort(arr)
+     return arr
+}
+
+let populateOption = (js, html, numberedList = false) => {
+
+    if (numberedList) {
+        for (let i = 2; i <= js; i++) {
+            html.innerHTML += `<option value="${i}"> ${i} </option>`;
+        }
+    } else {
+        for (let i of js) {
+            html.innerHTML += `<option value="${i}"> ${i} </option>`;
+        }
+    }
+
+}
 
 fetch('https://darrencarlin.com/games.json')
     .then(function (response) {
@@ -22,100 +54,33 @@ fetch('https://darrencarlin.com/games.json')
     })
     .then(function (data) {
 
-        // This is a loop to console.log all games in sample, this will be the basis of any call to adjust the filter. 
-        // forEach is basically taking the games variable which is an array of objects and doing something with them.
-        // Usually this is used for arrays with objects inside for simple array use a regualr javascript for loop.
-
         data.forEach(function (game, index) {
 
-            //console.log(game)
-            //console.log(index)
+            games.push(game.name);
 
-            // In order for us to be able to display cetrain items we can use this syntax
-            // This is called dot notation, you can also use square bracks but I find this 
-            // easier.
+            genres.push(game.genre);
+            genres = flattenSort(genres);
 
-            //console.log(game.name) // Display the name of the game using dot notation.
+            ideal.push(game.idealFor);
+            ideal = flattenSort(ideal);
 
-            //console.log(game["difficulty"]) // Display the difficulty using square brack notation.
+            players.push(game.players.playersMax);
+            players = findMax(players);
 
-            // console.log(game.type) // If the items are in an array it will automatically display the entire array
+            mechanics.push(game.mechanics);
+            mechanics = flattenSort(mechanics);
 
-            // console.log(game.type[3]) // This will display the 3rd index within type
+            difficulty.push(game.difficulty);
+            difficulty = flattenSort(difficulty);
 
-            // These next lines are taking each item (genre, name, idealFor, players) from each game 
-            // and putting them into their own array.
-
-			
-			// Games
-			
-			games.push(game.name);
-			
-			// Genres 
-			
-			genres.push(game.genre);
-		    genres = flattenSort(genres);
-			
-			// Ideal 
-			
-			ideal.push(game.idealFor);
-			ideal = flattenSort(ideal);
-			 
-			 // Players 
-			 
-			players.push(game.players.playersMax);
-			players = findMax(players);
-			
-			// Type 
-			
-			type.push(game.type);
-            type = flattenSort(type);
-				
-            // Flattening & Sorting arrays (see functions below)
-
-             
         });
 
-        // These functions are flattening (merging) and sorting 
-		// (removing duplicates) arrays
-
-        function flatten(arr) {
-            return arr.reduce((a, b) => a.concat(b), [])
-        }
-
-        function flattenSort(arr) {
-            return [...new Set(arr.reduce((a, b) => a.concat(b), []))]
-        }
-
-        function findMax(arr) {
-            return [Math.max(...arr)];
-        }
-
-        // These loops are for populating the drop down menus in the HTML, we 
-		// are using template strings which are called 'back ticks' which are  
-		// a little more convienet than normal string building.
-
-
-        for (let i = 0; i < games.length; i++) {
-            gamesList.innerHTML += `<option value="${games[i]}"> ${games[i]} </option>`;
-
-        }
-
-        for (let i = 0; i < genres.length; i++) {
-            genresList.innerHTML += `<option value="${genres[i]}"> ${genres[i]} </option>`;
-        }
-
-        for (let i = 0; i < ideal.length; i++) {
-            idealList.innerHTML += `<option value="${ideal[i]}"> ${ideal[i]} </option>`;
-        }
-
-        for (let i = 2; i <= players; i++) {
-            playerList.innerHTML += `<option value="${[i]}"> ${[i]} </option>`;
-        }
-
-        for (let i = 0; i < type.length; i++) {
-            typeList.innerHTML += `<option value="${type[i]}"> ${type[i]} </option>`;
-        }
+        populateOption(games, gamesList);
+        populateOption(genres, genresList);
+        populateOption(ideal, idealList);
+        populateOption(mechanics, mechanicsList);
+        populateOption(difficulty, difficultyList);
+        populateOption(players, playerList, true);
 
     })
     .catch(function (error) {
