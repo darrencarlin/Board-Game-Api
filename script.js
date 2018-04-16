@@ -51,7 +51,7 @@ let populateOption = (js, html, numberedList = false) => {
 
 fetch('https://darrencarlin.com/games.json')
     .then(response => response.json())
-    .then(data => gameData = data.clone())
+    .then(data => gameData.push(data))
     .catch(err => console.log(err))
 
         gameData.forEach(function (game, index) {
