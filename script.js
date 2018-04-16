@@ -15,7 +15,7 @@ let mechanics = [];
 let difficulty = [];
 let data;
 let daz = [];
-let test = [];
+let test;
 
 let flatten = (arr) => {
     return arr.reduce((a, b) => a.concat(b), [])
@@ -52,7 +52,7 @@ let populateOption = (js, html, numberedList = false) => {
 function reqListener() {
   var data = JSON.parse(this.responseText);
   console.log(data);
-  test.push(...data)
+  test = data;
 }
 
 function reqError(err) {
