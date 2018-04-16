@@ -58,7 +58,7 @@ const getData = async () => {
 
 getData();
 
-
+  console.log(gameData);
 gameData.forEach(function (game, index) {
 console.log("foreach")
 	games.push(game.name);
