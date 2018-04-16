@@ -1,4 +1,3 @@
-
 let app = document.getElementById("app");
 
 let gamesList = document.getElementById("gamesList");
@@ -13,26 +12,26 @@ let ideal = [];
 let players = [];
 let mechanics = [];
 let difficulty = [];
+let gameArr = [];
 let data;
-let daz = [];
-let test;
+let endpoint = "https://www.darrencarlin.com/games.json";
 
-let flatten = (arr) => {
-    return arr.reduce((a, b) => a.concat(b), [])
-}
+//let flatten = (arr) => {
+//    return arr.reduce((a, b) => a.concat(b), [])
+//}
 
 let flattenSort = (arr) => {
     return [...new Set(arr.reduce((a, b) => a.concat(b), []))]
 }
 
 let findMax = (arr) => {
-   return [Math.max(...arr)]
+    return [Math.max(...arr)]
 }
 
 let pushArr = (arr, json) => {
-     arr.push(json)
-     arr = flattenSort(arr)
-     return arr
+    arr.push(json)
+    arr = flattenSort(arr)
+    return arr
 }
 
 let populateOption = (js, html, numberedList = false) => {
@@ -43,20 +42,23 @@ let populateOption = (js, html, numberedList = false) => {
         }
     } else {
         for (let i of js) {
+            if (i === "") {
+                continue
+            }
             html.innerHTML += `<option value="${i}"> ${i} </option>`;
         }
     }
 
 }
 
-fetch('https://darrencarlin.com/games.json')
+fetch(endpoint)
     .then(response => response.json())
-    .then(function (data) {
+    .then(data => {
 
-        data.forEach(function (game, index) {
-            
-            daz.push(game);
-          
+        data.forEach((game, index) => {
+
+            gameArr.push(game);
+
             games.push(game.name);
 
             genres.push(game.genre);
@@ -87,5 +89,4 @@ fetch('https://darrencarlin.com/games.json')
     .catch(function (error) {
         console.log(error);
     });
-    console.log(daz)
-    
+console.log(daz)
