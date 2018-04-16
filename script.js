@@ -48,39 +48,40 @@ let populateOption = (js, html, numberedList = false) => {
     }
 
 }
-let test = [];
-let addData = (data) => test.push(...data);
 
-fetch('https://darrencarlin.com/games.json')
-    .then(response => response.json())
-    .then(data => addData(data))
-    .catch(err => console.log(err))
+const getData = async () => {
+    const response = await fetch('https://darrencarlin.com/games.json');
+    const json = await response.json();
+    gameData.push(...json);
+}
+
+getData();
 
 
-        test.forEach(function (game, index) {
-            
-            games.push(game.name);
+gameData.forEach(function (game, index) {
 
-            genres.push(game.genre);
-            genres = flattenSort(genres);
+	games.push(game.name);
 
-            ideal.push(game.idealFor);
-            ideal = flattenSort(ideal);
+	genres.push(game.genre);
+	genres = flattenSort(genres);
 
-            players.push(game.players.playersMax);
-            players = findMax(players);
+	ideal.push(game.idealFor);
+	ideal = flattenSort(ideal);
 
-            mechanics.push(game.mechanics);
-            mechanics = flattenSort(mechanics);
+	players.push(game.players.playersMax);
+	players = findMax(players);
 
-            difficulty.push(game.difficulty);
-            difficulty = flattenSort(difficulty);
+	mechanics.push(game.mechanics);
+	mechanics = flattenSort(mechanics);
 
-        });
+	difficulty.push(game.difficulty);
+	difficulty = flattenSort(difficulty);
 
-        populateOption(games, gamesList);
-        populateOption(genres, genresList);
-        populateOption(ideal, idealList);
-        populateOption(mechanics, mechanicsList);
-        populateOption(difficulty, difficultyList);
-        populateOption(players, playerList, true);
+});
+
+populateOption(games, gamesList);
+populateOption(genres, genresList);
+populateOption(ideal, idealList);
+populateOption(mechanics, mechanicsList);
+populateOption(difficulty, difficultyList);
+populateOption(players, playerList, true);
