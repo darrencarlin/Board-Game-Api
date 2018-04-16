@@ -59,7 +59,7 @@ fetch('https://darrencarlin.com/games.json')
         gameData.forEach(function (game, index) {
             
             test.push(...gameData);
-            console.log(test);
+          
             games.push(game.name);
 
             genres.push(game.genre);
@@ -86,3 +86,4 @@ fetch('https://darrencarlin.com/games.json')
         populateOption(difficulty, difficultyList);
         populateOption(players, playerList, true);
 
+          console.log(test);
