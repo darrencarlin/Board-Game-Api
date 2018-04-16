@@ -48,13 +48,16 @@ let populateOption = (js, html, numberedList = false) => {
     }
 
 }
+let test = [];
+let addData = (data) => test.push(...data);
 
 fetch('https://darrencarlin.com/games.json')
     .then(response => response.json())
-    .then(data => gameData.push(...data))
+    .then(data => addData(data))
     .catch(err => console.log(err))
-    console.log(gameData)
-        gameData.forEach(function (game, index) {
+
+
+        test.forEach(function (game, index) {
             
             games.push(game.name);
 
