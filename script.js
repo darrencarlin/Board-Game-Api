@@ -53,7 +53,7 @@ fetch('https://darrencarlin.com/games.json')
     .then(response => response.json())
     .then(data => gameData.push(data))
     .catch(err => console.log(err))
-
+    console.log(gameData)
         gameData.forEach(function (game, index) {
             
             games.push(game.name);
