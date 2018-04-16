@@ -47,7 +47,7 @@ let populateOption = (js, html, numberedList = false) => {
     }
 
 }
-    console.log(test)
+
 fetch('https://darrencarlin.com/games.json')
     .then(function (response) {
         return response.json();
@@ -77,7 +77,7 @@ fetch('https://darrencarlin.com/games.json')
             difficulty = flattenSort(difficulty);
 
         });
-    console.log(test)
+
         populateOption(games, gamesList);
         populateOption(genres, genresList);
         populateOption(ideal, idealList);
