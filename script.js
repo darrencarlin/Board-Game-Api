@@ -49,33 +49,14 @@ let populateOption = (js, html, numberedList = false) => {
 
 }
 
-function reqListener() {
-  var data = JSON.parse(this.responseText);
-  console.log(data);
-  test = data;
-}
-
-function reqError(err) {
-  console.log('Fetch Error :-S', err);
-}
-
-var oReq = new XMLHttpRequest();
-oReq.onload = reqListener;
-oReq.onerror = reqError;
-oReq.open('get', 'https://darrencarlin.com/games.json', true);
-oReq.send();
-
 fetch('https://darrencarlin.com/games.json')
-    .then(function (response) {
-        return response.json();
-    })
+    .then(response => response.json())
     .then(function (data) {
 
         data.forEach(function (game, index) {
             
             daz.push(game);
-         
-        
+          
             games.push(game.name);
 
             genres.push(game.genre);
@@ -107,4 +88,4 @@ fetch('https://darrencarlin.com/games.json')
         console.log(error);
     });
     console.log(daz)
-    console.log(test)
+    
