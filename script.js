@@ -14,7 +14,7 @@ let players = [];
 let mechanics = [];
 let difficulty = [];
 let data;
-
+let test = [];
 
 let flatten = (arr) => {
     return arr.reduce((a, b) => a.concat(b), [])
@@ -47,7 +47,7 @@ let populateOption = (js, html, numberedList = false) => {
     }
 
 }
-
+    console.log(test)
 fetch('https://darrencarlin.com/games.json')
     .then(function (response) {
         return response.json();
@@ -55,7 +55,10 @@ fetch('https://darrencarlin.com/games.json')
     .then(function (data) {
 
         data.forEach(function (game, index) {
-            console.log(game);
+            
+            test.push(game);
+            
+        
             games.push(game.name);
 
             genres.push(game.genre);
@@ -74,7 +77,7 @@ fetch('https://darrencarlin.com/games.json')
             difficulty = flattenSort(difficulty);
 
         });
-    console.log(game);
+    console.log(test)
         populateOption(games, gamesList);
         populateOption(genres, genresList);
         populateOption(ideal, idealList);
@@ -86,3 +89,4 @@ fetch('https://darrencarlin.com/games.json')
     .catch(function (error) {
         console.log(error);
     });
+    console.log(test)
