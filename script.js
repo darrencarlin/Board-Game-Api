@@ -15,6 +15,7 @@ let mechanics = [];
 let difficulty = [];
 let data;
 let daz = [];
+let test = [];
 
 let flatten = (arr) => {
     return arr.reduce((a, b) => a.concat(b), [])
@@ -47,6 +48,22 @@ let populateOption = (js, html, numberedList = false) => {
     }
 
 }
+
+function reqListener() {
+  var data = JSON.parse(this.responseText);
+  console.log(data);
+  test.push(...data)
+}
+
+function reqError(err) {
+  console.log('Fetch Error :-S', err);
+}
+
+var oReq = new XMLHttpRequest();
+oReq.onload = reqListener;
+oReq.onerror = reqError;
+oReq.open('get', 'https://darrencarlin.com/games.json', true);
+oReq.send();
 
 fetch('https://darrencarlin.com/games.json')
     .then(function (response) {
@@ -90,4 +107,4 @@ fetch('https://darrencarlin.com/games.json')
         console.log(error);
     });
     console.log(daz)
-
+    console.log(test)
