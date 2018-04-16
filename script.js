@@ -49,18 +49,11 @@ let populateOption = (js, html, numberedList = false) => {
 
 }
 
-const getData = async () => {
-    const response = await fetch('https://darrencarlin.com/games.json');
-    const json = await response.json();
-    gameData.push(...json);
-    console.log(gameData);
-}
-
-getData();
-
-  console.log(gameData);
-gameData.forEach(function (game, index) {
-console.log("foreach")
+fetch('https://darrencarlin.com/games.json')
+    .then(response => response.json())
+    .then(data => data.forEach(function (game, index) {
+	
+	console.log("foreach")
 	games.push(game.name);
 
 	genres.push(game.genre);
@@ -79,6 +72,9 @@ console.log("foreach")
 	difficulty = flattenSort(difficulty);
 
 });
+)
+
+  .catch(err => console.log(err))
 
 populateOption(games, gamesList);
 populateOption(genres, genresList);
