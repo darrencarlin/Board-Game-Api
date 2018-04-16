@@ -1,3 +1,4 @@
+
 let app = document.getElementById("app");
 
 let gamesList = document.getElementById("gamesList");
@@ -5,7 +6,6 @@ let genresList = document.getElementById("genresList");
 let idealList = document.getElementById("idealList");
 let playerList = document.getElementById("playerList");
 let mechanicsList = document.getElementById("mechanicsList");
-let difficultyList = document.getElementById("difficultyList");
 
 let games = [];
 let genres = [];
@@ -13,7 +13,7 @@ let ideal = [];
 let players = [];
 let mechanics = [];
 let difficulty = [];
-let gameData = [];
+let data;
 
 
 let flatten = (arr) => {
@@ -25,13 +25,13 @@ let flattenSort = (arr) => {
 }
 
 let findMax = (arr) => {
-    return [Math.max(...arr)]
+   return [Math.max(...arr)]
 }
 
 let pushArr = (arr, json) => {
-    arr.push(json)
-    arr = flattenSort(arr)
-    return arr
+     arr.push(json)
+     arr = flattenSort(arr)
+     return arr
 }
 
 let populateOption = (js, html, numberedList = false) => {
@@ -49,33 +49,40 @@ let populateOption = (js, html, numberedList = false) => {
 }
 
 fetch('https://darrencarlin.com/games.json')
-    .then(response => response.json())
-    .then(data => data.forEach(function(game, index) {
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
 
-        console.log("foreach")
-        games.push(game.name);
+        data.forEach(function (game, index) {
 
-        genres.push(game.genre);
-        genres = flattenSort(genres);
+            games.push(game.name);
 
-        ideal.push(game.idealFor);
-        ideal = flattenSort(ideal);
+            genres.push(game.genre);
+            genres = flattenSort(genres);
 
-        players.push(game.players.playersMax);
-        players = findMax(players);
+            ideal.push(game.idealFor);
+            ideal = flattenSort(ideal);
 
-        mechanics.push(game.mechanics);
-        mechanics = flattenSort(mechanics);
+            players.push(game.players.playersMax);
+            players = findMax(players);
 
-        difficulty.push(game.difficulty);
-        difficulty = flattenSort(difficulty);
+            mechanics.push(game.mechanics);
+            mechanics = flattenSort(mechanics);
 
-    }))
-    .catch(err => console.log(err))
+            difficulty.push(game.difficulty);
+            difficulty = flattenSort(difficulty);
 
-populateOption(games, gamesList);
-populateOption(genres, genresList);
-populateOption(ideal, idealList);
-populateOption(mechanics, mechanicsList);
-populateOption(difficulty, difficultyList);
-populateOption(players, playerList, true);
+        });
+
+        populateOption(games, gamesList);
+        populateOption(genres, genresList);
+        populateOption(ideal, idealList);
+        populateOption(mechanics, mechanicsList);
+        populateOption(difficulty, difficultyList);
+        populateOption(players, playerList, true);
+
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
