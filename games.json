@@ -1,49 +1,253 @@
-[{
+[
+  {
     "id": 1,
     "name": "30 Seconds",
     "description": "At first glance the South African game 30 Seconds looks a bit like Trivial Pursuit. Players play in teams of two. Every turn, a player takes a card with five famous names on them, and tries to describe those names to his partner, who tries to guess what is being described. The goal is to guess as many words as possible in, you guessed it, 30 seconds.",
     "image": "http://www.tabletop.com/images/games/30seconds.jpg",
-    "type": ["Board", "Card", "Dice", "Co-operative"],
-    "genre": ["Trivia"],
-    "idealFor": ["Groups", "Family"],
+    "type": [ "Board", "Card", "Dice", "Co-operative" ],
+    "genre": [ "Trivia" ],
+    "idealFor": [ "Groups", "Family" ],
     "players": {
-        "playersIdeal": 6,
-        "playersMin": 2,
-        "playersMax": 16
+      "playersIdeal": 6,
+      "playersMin": 2,
+      "playersMax": 16
     },
     "age": 8,
     "difficulty": "Easy",
     "time": {
-        "setupTime": 1,
-        "playTime": 60
+      "setupTime": 1,
+      "playTime": 60
     },
     "yearPublished": 2010,
-    "publisher": ["999 Games", "Calco Games", "Kiwi Games"],
+    "publisher": [ "999 Games", "Calco Games", "Kiwi Games" ],
     "rank": 0,
     "rating": 0,
+    "expansion": false,
     "location": "Cork"
-}, {
+  },
+  {
     "id": 2,
+    "name": "Abluxxen",
+    "description": "A set of 6 special cards and a rule sheet with a 2-player variant for the game. There is one special card for 3, 4, 5, 6, 7 and 8 of a kind. A player who plays down any of these combinations, may take that card (or steal it from another player). Each card is worth 5 points at game end.",
+    "image": "",
+    "type": [ "Card" ],
+    "genre": [ ],
+    "idealFor": [ "Groups" ],
+    "players": {
+      "playersIdeal": 4,
+      "playersMin": 2,
+      "playersMax": 5
+    },
+    "age": 10,
+    "difficulty": "Easy",
+    "time": {
+      "setupTime": 1,
+      "playTime": 25
+    },
+    "yearPublished": 2014,
+    "publisher": [ "Ravensburger Spieleverlag GmbH" ],
+    "rank": 0,
+    "rating": 0,
+    "expansion": true,
+    "location": "Cork"
+  },
+  {
+    "id": 3,
+    "name": "Ah Here Now",
+    "description": "Ah Here Now is a game celebrating the more wicked side of Irish humour. A party game for bastards, gobshites and thunderin' bitches aged 18 and up. It is to all intents and purposes Card Against Humanity, but with a distinctly Irish twist.",
+    "image": "",
+    "type": [ "Card","Party" ],
+    "genre": [ "Humour" ],
+    "idealFor": [ "Groups", "Family" ],
+    "players": {
+      "playersIdeal": 6,
+      "playersMin": 2,
+      "playersMax": 16
+    },
+    "age": 18,
+    "difficulty": "Easy",
+    "time": {
+      "setupTime": 1,
+      "playTime": 60
+    },
+    "yearPublished": 2016,
+    "publisher": [ ],
+    "rank": 0,
+    "rating": 0,
+    "expansion": false,
+    "location": "Cork"
+  },
+  {
+    "id": 5,
+    "name": "Anomia",
+    "description": "Anomia plays off the fact that our minds are positively brimming with all sorts of random information: things to eat, pop songs, websites, etc... Sure, under normal circumstances, it's easy to give an example of a frozen food or a dog breed, but you'll find that your brain works a little differently under pressure! To play, draw and reveal a card from the center pile. Does the symbol on your card match one on another player's card? If so, you must quickly face-off with the other player by giving an example of the person, place, or thing on his card before he can do the same for yours. If you blurt out a correct answer first, you win his card and the drawing continues.",
+    "image": "",
+    "type": ["Card", "Party","Word"],
+    "genre": ["Trivia"],
+    "idealFor": ["Groups", "Family"],
+    "players": {
+      "playersIdeal": 5,
+      "playersMin": 3,
+      "playersMax": 6
+    },
+    "age": 10,
+    "difficulty": "Easy",
+    "time": {
+      "setupTime": 1,
+      "playTime": 30
+    },
+    "yearPublished": 2010,
+    "publisher": ["Anomia Press,"],
+    "rank": 0,
+    "rating": 0,
+    "expansion": false,
+    "location": "Cork"
+  },
+  {
+    "id": 6,
+    "name": "Ark Buddies",
+    "description": "Ark Buddies Noah’s Memory Game is fun for all the family. It’s an Irish made family game for 2 – 4 players. It’s easy to play Ark Buddies Noah’s Memory Game. Create Noah’s 3D Ark, then match two animals and place them in your section on Noah’s Ark. The player that has the most animal pairs in their section wins.",
+    "image": "",
+    "type": [],
+    "genre": [""],
+    "idealFor": ["Groups","Family"],
+    "players": {
+      "playersIdeal": 4,
+      "playersMin": 2,
+      "playersMax": 4
+    },
+    "age": 3,
+    "difficulty": "Easy",
+    "time": {
+      "setupTime": 1,
+      "playTime": 30
+    },
+    "yearPublished": 2014,
+    "publisher": ["Gosling Games"],
+    "rank": 0,
+    "rating": 0,
+    "expansion": false,
+    "location": "Cork"
+  },
+  {
+    "id": 7,
+    "name": "Arkham Horror",
+    "description": "Something evil stirs in Arkham, and only you can stop it. Blurring the traditional lines between roleplaying and card game experiences, Arkham Horror: The Card Game is a Living Card Game of Lovecraftian mystery, monsters, and madness!",
+    "image": "",
+    "type": ["Card","Co-operative"],
+    "genre": ["Adventure","Horror","Fantasy","Role Playing"],
+    "idealFor": ["Groups","Two Player"],
+    "players": {
+      "playersIdeal": 2,
+      "playersMin": 1,
+      "playersMax": 2
+    },
+    "age": 14,
+    "difficulty": "Easy",
+    "time": {
+      "setupTime": 5,
+      "playTime": 60
+    },
+    "yearPublished": 2016,
+    "publisher": ["Fantasy Flight Games"],
+    "rank": 0,
+    "rating": 0,
+    "expansion": false,
+    "location": "Cork"
+  },
+  {
+    "id": 8,
+    "name": "Articulate",
+    "description": "Try to get your partner to say as many words from a particular category written on the cards within the thirty second time limit, you may only pass once.",
+    "image": "",
+    "type": ["Card","Board","Word"],
+    "genre": ["Party"],
+    "idealFor": ["Groups","Family"],
+    "players": {
+      "playersIdeal": 6,
+      "playersMin": 4,
+      "playersMax": 8
+    },
+    "age": 10,
+    "difficulty": "Easy",
+    "time": {
+      "setupTime": 5,
+      "playTime": 60
+    },
+    "yearPublished": 1992,
+    "publisher": ["Drumond Park Ltd."],
+    "rank": 0,
+    "rating": 0,
+    "expansion": false,
+    "location": "Cork"
+  },
+  {
+    "id": 9,
+    "name": "Backgammon",
+    "description": "Backgammon is a classic abstract strategy game dating back thousands of years. Each player has a set of 15 men that must be moved from their starting postions, around, and then off the board. Dice are thrown each turn, and each player must decide which of his men to move based on the outcome of the roll. Players can capture each other's men, forcing the captured men to restart their journey around the board. The winner is the first player to get all 15 men off the board.",
+    "type": ["Dice","Board","Strategy"],
+    "genre": [],
+    "idealFor": ["Groups","Two Player"],
+    "players": {
+      "playersIdeal": 2,
+      "playersMin": 2,
+      "playersMax": 2
+    },
+    "age": 8,
+    "difficulty": "Medium",
+    "time": {
+      "setupTime": 1,
+      "playTime": 30
+    },
+    "yearPublished": 2014,
+    "publisher": ["Public Domain"],
+    "rank": 0,
+    "rating": 0,
+    "expansion": false,
+    "location": "Cork"
+  },
+  {
+    "id": 999,
     "name": "Dead Of Winter Expansion",
     "description": "Dead of Winter: A Crossroads Game, the first game in this series, puts 2-5 players in a small, weakened colony of survivors in a world where most of humanity is either dead or diseased, flesh-craving monsters. Each player leads a faction of survivors with dozens of different characters in the game.",
     "image": "http://www.tabletop.com/images/games/deadofwinter.jpg",
-    "type": ["Board", "Card", "Dice", "Co-operative", "Bluffing", "Storytelling", "Voting", "Trading"],
-    "genre": ["Zombie", "Survival", "Horror", "Post-Apocalyptic"],
-    "idealFor": ["Groups"],
+    "type": [
+      "Board",
+      "Card",
+      "Dice",
+      "Co-operative",
+      "Bluffing",
+      "Storytelling",
+      "Voting",
+      "Trading"
+    ],
+    "genre": [
+      "Zombie",
+      "Survival",
+      "Horror",
+      "Post-Apocalyptic"
+    ],
+    "idealFor": [
+      "Groups"
+    ],
     "players": {
-        "playersIdeal": 4,
-        "playersMin": 2,
-        "playersMax": 5
+      "playersIdeal": 4,
+      "playersMin": 2,
+      "playersMax": 5
     },
     "age": 12,
     "difficulty": "Medium",
     "time": {
-        "setupTime": 5,
-        "playTime": 60
+      "setupTime": 5,
+      "playTime": 60
     },
     "yearPublished": 2014,
-    "publisher": ["Plaid Hat Games"],
+    "publisher": [
+      "Plaid Hat Games"
+    ],
     "rank": 0,
     "rating": 0,
+    "expansion": false,
     "location": "Cork"
-}]
+  }
+]
