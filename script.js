@@ -53,6 +53,7 @@ const getData = async () => {
     const response = await fetch('https://darrencarlin.com/games.json');
     const json = await response.json();
     gameData.push(...json);
+    console.log(gameData);
 }
 
 getData();
