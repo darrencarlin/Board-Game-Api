@@ -50,7 +50,7 @@ let populateOption = (js, html, numberedList = false) => {
 
 fetch('https://darrencarlin.com/games.json')
     .then(response => response.json())
-    .then(data => data.forEach( (game, index) => {
+    .then(data => data.forEach(function(game, index) {
 
         console.log("foreach")
         games.push(game.name);
