@@ -10,25 +10,34 @@
 <body>
 
     <div id="app" class="app">
-        <select name="games" id="gamesList" class="games-list">
-            <option value="Games">Games</option>
-        </select>
-        <select name="genres" id="genresList" class="genres-list">
-            <option value="Genres">Genres</option>
-        </select>
-        <select name="mechanics" id="mechanicsList" class="mechanics-list">
-            <option value="Mechanics">Mechanics</option>
-        </select>
-        <select name="ideal For" id="idealList" class="ideal-list">
-            <option value="Ideal For">Ideal For</option>
-        </select>
-        <select name="players" id="playerList" class="player-list">
-            <option value="players">Players</option>
-        </select>
-        <select name="difficulty" id="difficultyList" class="difficulty-list">
-            <option value="difficulty">Difficulty</option>
-        </select>
-        
+
+        <div class="dropdown">
+            <select name="games" id="gamesList" class="games-list">
+                <option value="Games">Games</option>
+            </select>
+            <select name="genres" id="genresList" class="genres-list">
+                <option value="Genres">Genres</option>
+            </select>
+            <select name="mechanics" id="mechanicsList" class="mechanics-list">
+                <option value="Mechanics">Mechanics</option>
+            </select>
+            <select name="ideal For" id="idealList" class="ideal-list">
+                <option value="Ideal For">Ideal For</option>
+            </select>
+            <select name="players" id="playerList" class="player-list">
+                <option value="players">Players</option>
+            </select>
+            <select name="difficulty" id="difficultyList" class="difficulty-list">
+                <option value="difficulty">Difficulty</option>
+            </select>
+        </div>
+        <div class="search">
+           
+            <input type="text" class="search-bar" placeholder="SEARCH">
+            <ul class="suggestions">
+                <li>Filter Games By Name</li>
+            </ul>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

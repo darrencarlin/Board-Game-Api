@@ -8,10 +8,43 @@
     box-sizing: border-box;
 }
 
-
 .app {
-    width: 50%;
+    width: 80%;
     height: 400px;
     margin: 25px auto;
     border: 2px solid #ccc;
+    display: flex;
+    flex-direction: column;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px;
+    padding: 25px;
+}
+
+.search input {
+    padding: 5px;
+    width: 200px;
+}
+
+::placeholder {
+    color: #333;
+}
+
+.search ul {
+    list-style: none;
+    width: 200px;
+    
+}
+
+.search li {
+    margin: 5px 0 5px 0;
+    border: 1px solid #ccc;
+    padding: 5px;
+    color: #333;
+    transition: all .3s ease-in-out;
 }
