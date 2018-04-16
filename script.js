@@ -56,7 +56,7 @@ fetch('https://darrencarlin.com/games.json')
 
         data.forEach(function (game, index) {
             
-            test.push(game);
+            test.push(...game);
             
         
             games.push(game.name);
