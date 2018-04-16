@@ -89,4 +89,4 @@ fetch(endpoint)
     .catch(function (error) {
         console.log(error);
     });
-console.log(daz)
+console.log(gameArr)
