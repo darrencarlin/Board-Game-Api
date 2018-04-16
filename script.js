@@ -54,11 +54,12 @@ fetch('https://darrencarlin.com/games.json')
     .then(data => gameData.push(...data))
     .catch(err => console.log(err))
 
-   // console.log(gameData)
+  let test = [];
     
         gameData.forEach(function (game, index) {
-            gameData = game
-            console.log(gameData)
+            
+            test.push(...gameData);
+            console.log(test);
             games.push(game.name);
 
             genres.push(game.genre);
