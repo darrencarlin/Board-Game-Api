@@ -51,15 +51,11 @@ let populateOption = (js, html, numberedList = false) => {
 
 fetch('https://darrencarlin.com/games.json')
     .then(response => response.json())
-    .then(data => gameData.push(...data))
+    .then(data => gameData = data.clone())
     .catch(err => console.log(err))
 
-  let test = [];
-    
         gameData.forEach(function (game, index) {
             
-            test.push(...gameData);
-          
             games.push(game.name);
 
             genres.push(game.genre);
@@ -85,5 +81,3 @@ fetch('https://darrencarlin.com/games.json')
         populateOption(mechanics, mechanicsList);
         populateOption(difficulty, difficultyList);
         populateOption(players, playerList, true);
-
-          console.log(test);
