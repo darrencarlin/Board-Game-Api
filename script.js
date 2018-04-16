@@ -1,5 +1,8 @@
-let app = document.getElementById("app");
+/*****************************************************************************/
+/*                            VARIABLES                                      */
+/*****************************************************************************/
 
+let app = document.getElementById("app");
 let gamesList = document.getElementById("gamesList");
 let genresList = document.getElementById("genresList");
 let idealList = document.getElementById("idealList");
@@ -13,67 +16,68 @@ let players = [];
 let mechanics = [];
 let difficulty = [];
 let gameArr = [];
-let data;
 let endpoint = "https://www.darrencarlin.com/games.json";
 
-//let flatten = (arr) => {
-//    return arr.reduce((a, b) => a.concat(b), [])
-//}
+/*****************************************************************************/
+/*                            FUNCTIONS                                      */
+/*****************************************************************************/
+
+// Flatten / De-duplicate Arrays.
 
 let flattenSort = (arr) => {
     return [...new Set(arr.reduce((a, b) => a.concat(b), []))]
 }
 
+// Find max player Count off all games.
+
 let findMax = (arr) => {
     return [Math.max(...arr)]
 }
 
-let pushArr = (arr, json) => {
-    arr.push(json)
-    arr = flattenSort(arr)
-    return arr
-}
+// Create and populate options for select menus.
+// *numberedList is used for player 2 - 'max player' 
 
-let populateOption = (js, html, numberedList = false) => {
+let populateOption = (jsArr, htmlEl, numberedList = false) => {
 
     if (numberedList) {
-        for (let i = 2; i <= js; i++) {
-            html.innerHTML += `<option value="${i}"> ${i} </option>`;
+        for (let i = 2; i <= jsArr; i++) {
+            htmlEl.innerHTML += `<option value="${i}"> ${i} </option>`;
         }
     } else {
-        for (let i of js) {
-            if (i === "") {
-                continue
+        for (let i of jsArr) {
+            if (i === "") { // Incase JSON contains an empty string 
+                continue // Don't include it
             }
-            html.innerHTML += `<option value="${i}"> ${i} </option>`;
+            htmlEl.innerHTML += `<option value="${i}"> ${i} </option>`;
         }
     }
-
 }
+
+// AJAX Call 
 
 fetch(endpoint)
     .then(response => response.json())
     .then(data => {
 
-        data.forEach((game, index) => {
+        data.forEach((game, index) => { 
 
-            gameArr.push(game);
+            gameArr.push(game); // Storing entire JSON data.
 
-            games.push(game.name);
+            games.push(game.name); // Storing Names
 
-            genres.push(game.genre);
+            genres.push(game.genre); // Storing Genres
             genres = flattenSort(genres);
 
-            ideal.push(game.idealFor);
+            ideal.push(game.idealFor); // Storing Ideal For
             ideal = flattenSort(ideal);
 
-            players.push(game.players.playersMax);
+            players.push(game.players.playersMax); // Storing Max Players
             players = findMax(players);
 
-            mechanics.push(game.mechanics);
+            mechanics.push(game.mechanics); // Storing Mechanics
             mechanics = flattenSort(mechanics);
 
-            difficulty.push(game.difficulty);
+            difficulty.push(game.difficulty); // Storing Difficulty 
             difficulty = flattenSort(difficulty);
 
         });
@@ -89,4 +93,3 @@ fetch(endpoint)
     .catch(function (error) {
         console.log(error);
     });
-console.log(gameArr)
