@@ -14,8 +14,7 @@ let players = [];
 let mechanics = [];
 let difficulty = [];
 let data;
-let test = [];
-let daz;
+let daz = [];
 
 let flatten = (arr) => {
     return arr.reduce((a, b) => a.concat(b), [])
@@ -57,8 +56,8 @@ fetch('https://darrencarlin.com/games.json')
 
         data.forEach(function (game, index) {
             
-            test.push(...game);
-            daz = game;
+            daz.push(game);
+         
         
             games.push(game.name);
 
@@ -90,5 +89,5 @@ fetch('https://darrencarlin.com/games.json')
     .catch(function (error) {
         console.log(error);
     });
-    console.log(test)
-console.log(daz)
+    console.log(daz)
+
