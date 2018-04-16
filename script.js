@@ -60,7 +60,7 @@ getData();
 
 
 gameData.forEach(function (game, index) {
-
+console.log("foreach")
 	games.push(game.name);
 
 	genres.push(game.genre);
