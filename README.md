@@ -8,3 +8,6 @@ todo:
 * ~~Convert this project into a gulp project for babel~~
 * ~~Add Firebase database~~
 * Add Firebase Validation 
+* Build out dashboard
+    * Default list current games
+        * Add option to delete / update from this page on each game
