@@ -1,6 +1,7 @@
 # Board-Game-Api
 Filter for board games 
 
+Project to build a CRUD database with firebase on the backend that has an admin dashboard and a user interface for choosing/filtering through the board games in the database.
 
 todo:
 
