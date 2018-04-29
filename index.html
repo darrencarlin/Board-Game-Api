@@ -4,42 +4,86 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-    <link href="styles.css" rel="stylesheet" />
+    <link href="dist/css/styles.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
 
     <div id="app" class="app">
 
-        <div class="dropdown">
-            <select name="games" id="gamesList" class="games-list">
-                <option value="Games">Games</option>
-            </select>
-            <select name="genres" id="genresList" class="genres-list">
-                <option value="Genres">Genres</option>
-            </select>
-            <select name="mechanics" id="mechanicsList" class="mechanics-list">
-                <option value="Mechanics">Mechanics</option>
-            </select>
-            <select name="ideal For" id="idealList" class="ideal-list">
-                <option value="Ideal For">Ideal For</option>
-            </select>
-            <select name="players" id="playerList" class="player-list">
-                <option value="players">Players</option>
-            </select>
-            <select name="difficulty" id="difficultyList" class="difficulty-list">
-                <option value="difficulty">Difficulty</option>
-            </select>
-        </div>
-        <div class="search">
+        <form action="#" id="form" class="form">
+
+            <label for="formName">Name:</label>
+            <input id="formName" type="text">
+
+            <label for="formDescription">Description:</label>
+            <textarea id="formDescription"  cols="30" rows="10"></textarea>
+
+            <label for="formImage">Image: <small>(add name without spaces and .png extension)</small></label>
+            <input id="formImage" type="text" value="http://www.tabletop.com/images/games/">
+
+            <label for="formType">Type:</label>
+            <input id="formType" type="text">
+
+            <label for="formGenre">Genre:</label>
+            <input id="formGenre" type="text">
+
+            <label for="formIdeal">Ideal For:</label>
+            <input id="formIdeal" type="text">
+
+            <label for="formPlayersIdeal">Players Ideal:</label>
+            <input id="formPlayersIdeal" type="text">
+
+            <label for="formPlayersMinimum">Players Minimum:</label>
+            <input id="formPlayersMinimum" type="text">
+
+            <label for="formPlayersMax">Players Max:</label>
+            <input id="formPlayersMax" type="text">
+
+            <label for="formAge">Age:</label>
+            <input id="formAge" type="text">
+
+            <label for="formDifficulty">Difficulty:</label>
+            <input id="formDifficulty" type="text">
+
+            <label for="formSetupTime">Setup Time:</label>
+            <input id="formSetupTime" type="text">
+
+            <label for="formPlayTime">Play Time:</label>
+            <input id="formPlayTime" type="text">
+
+            <label for="formPublishDate">Publish Date:</label>
+            <input id="formPublishDate" type="text">
+
+            <label for="formPublisher">Publisher:</label>
+            <input id="formPublisher" type="text">
            
-            <input type="text" class="search-bar" placeholder="SEARCH">
-            <ul class="suggestions">
-                <li>Filter Games By Name</li>
-            </ul>
-        </div>
+            <label for="formExpansion">Expansion:</label>
+            <input id="formExpansion" type="text">
+
+            <label for="formLocation" for="id">Location:</label>
+            <input id="formLocation" type="text">
+
+            <a id="formSubmit"> Add Game </a>
+
+        </form>
+
     </div>
-    <script src="script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCxPu8HFBXRDWsLhjQWwjVKvznkS1mT5MY",
+            authDomain: "board-game-tabletop.firebaseapp.com",
+            databaseURL: "https://board-game-tabletop.firebaseio.com",
+            projectId: "board-game-tabletop",
+            storageBucket: "",
+            messagingSenderId: "115444661210"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="dist/js/script.min.js"></script>
 </body>
 
 </html>
