@@ -22,8 +22,16 @@
 // let gameArr = [];
 // let endpoint = "https://www.darrencarlin.com/games.json";
 
-// Form Inputs 
+// Elements 
 
+let tableContainer = document.getElementById("viewGames");
+tableContainer.style.display = "none"
+let table = document.getElementById("viewGamesTable");
+let viewGamesBtn = document.getElementById("viewGamesBtn").addEventListener("click", viewGames);
+let addGamesBtn = document.getElementById("addGamesBtn").addEventListener("click", addGames);
+
+// Form Inputs 
+let form = document.getElementById("formAddGames");
 let formName = document.getElementById("formName");
 let formDescription = document.getElementById("formDescription");
 let formImage = document.getElementById("formImage");
@@ -41,41 +49,70 @@ let formPublishDate = document.getElementById("formPublishDate");
 let formPublisher = document.getElementById("formPublisher");
 let formExpansion = document.getElementById("formExpansion");
 let formLocation = document.getElementById("formLocation");
-let submitForm = document.getElementById("formSubmit"); 
+let submitForm = document.getElementById("formSubmit");
+
 submitForm.addEventListener("click", addGame);
 
-var database = firebase.database();
+let database = firebase.database();
+let games = [];
+
+function displayGames() {
+    let data = firebase.database().ref();
+    data.on("value", function(snapshot){
+        snapshot.forEach(function(game){
+            table.innerHTML += `<tr><td>${game.val().name}</td> <td>${game.val().id}</td><td class="edit"> <i class="far fa-edit"></i></td><td class="delete"> <i class="far fa-trash-alt"></i></td></tr>`
+        })   
+    }) 
+}
+
+function addGames() {
+    tableContainer.style.display = "none";
+    form.style.display = "grid";
+}
+
+function viewGames() {
+    form.style.display = "none";
+    tableContainer.style.display = "block";
+   
+}
+displayGames()
 
 function addGame(evt) {
-    evt.preventDefault
-    let data = {
 
+    evt.preventDefault
+    let firebaseKey = firebase.database().ref().child("board-game-tabletop").push().key;
+    
+    let data = {
+        id: firebaseKey,
         name: formName.value,
         description: formDescription.value,
-        image: formImage.value,
-        type: formType.value,
-        genre: formGenre.value,
-        idealFor: formIdeal.value,
-        playersIdeal: formPlayersIdeal.value,
-        playersMin: formPlayersMinimum.value,
-        playersMax: formPlayersMax.value,
-        age: formAge.value,
+        image: `${formImage.value}.png`.toLowerCase(),
+        type: formType.value.split(", "),
+        genre: formGenre.value.split(", "),
+        idealFor: formIdeal.value.split(", "),
+        playersIdeal: parseInt(formPlayersIdeal.value),
+        playersMin: parseInt(formPlayersMinimum.value),
+        playersMax: parseInt(formPlayersMax.value),
+        age: parseInt(formAge.value),
         difficulty: formDifficulty.value,
-        setupTime: formSetupTime.value,
-        playTime: formPlayTime.value,
+        setupTime: parseInt(formSetupTime.value),
+        playTime: parseInt(formPlayTime.value),
         yearPublished: formPublishDate.value,
-        publisher: formPublisher.value,
-        expansion: formExpansion.value,
-        location: formLocation.value 
-        
+        publisher: formPublisher.value.split(", "),
+        rank: 0,
+        rating: 0,
+        expansion: stringToBool(formExpansion.value),
+        location: formLocation.value
+
     }
-
-    let firebaseKey = firebase.database().ref().child("board-game-tabletop").push().key;
-
     let updates = {};
-    updates['/' + firebaseKey] = data;
-
+    updates['/' + formName.value] = data; 
+    submitForm.innerHTML = "Game Added!";
+    setTimeout(() => {
+        submitForm.innerHTML = "Add Game";
+    }, 3000)
     return firebase.database().ref().update(updates);
+
 }
 
 
@@ -84,6 +121,12 @@ function addGame(evt) {
 /*****************************************************************************/
 /*                            FUNCTIONS                                      */
 /*****************************************************************************/
+
+// Convert string to boolean
+
+function stringToBool(str) {
+    return ((str === "True") || (str === "true")) ? true : false;
+}
 
 // // Flatten / De-duplicate Arrays.
 

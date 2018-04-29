@@ -3,69 +3,138 @@
 
 <head>
     <meta charset="utf-8" />
-    <title></title>
-    <link href="dist/css/styles.min.css" rel="stylesheet" />
+    <title>Tabletop Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+        crossorigin="anonymous">
+    <link href="dist/css/styles.min.css" rel="stylesheet" />
+
 </head>
 
 <body>
 
     <div id="app" class="app">
+        <div class="side-bar">
+            <div class="heading">
+                <h3>Table Top Dashboard</h3>
+            </div>
+            <ul>
+                <li id="viewGamesBtn">
+                    <span>View Games</span>
+                    <i class="fas fa-eye"></i>
+                </li>
+                <li id="addGamesBtn">
+                    <span>Add Games</span>
+                    <i class="fas fa-plus"></i>
+                </li>
+                <li id="editGamesBtn">
+                    <span>Edit Games</span>
+                    <i class="far fa-edit"></i>
+                </li>
+                <li id="deleteGamesBtn">
+                    <span>Delete Games</span>
+                    <i class="far fa-trash-alt"></i>
+                </li>
+            </ul>
 
-        <form action="#" id="form" class="form">
 
-            <label for="formName">Name:</label>
-            <input id="formName" type="text">
+        </div>
+        <div id="viewGames" class="view-games">
 
-            <label for="formDescription">Description:</label>
-            <textarea id="formDescription"  cols="30" rows="10"></textarea>
+            <table>
+                <tbody id="viewGamesTable">
+                    <tr>
+                        <th>Name</th>
+                        <th>ID</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </tbody>
+            </table>
 
-            <label for="formImage">Image: <small>(add name without spaces and .png extension)</small></label>
-            <input id="formImage" type="text" value="http://www.tabletop.com/images/games/">
+        </div>
+        <form action="#" id="formAddGames" class="form">
+            <fieldset class="section-a">
+                <h3>Game Info </h3>
+                <hr>
 
-            <label for="formType">Type:</label>
-            <input id="formType" type="text">
+                <label for="formName">Name:</label>
+                <input id="formName" type="text">
 
-            <label for="formGenre">Genre:</label>
-            <input id="formGenre" type="text">
+                <label for="formDescription">Description:</label>
+                <textarea id="formDescription" cols="30" rows="15"></textarea>
 
-            <label for="formIdeal">Ideal For:</label>
-            <input id="formIdeal" type="text">
+                <label for="formImage">Image:
+                    <small>(name without spaces)</small>
+                </label>
+                <input id="formImage" type="text" value="http://www.tabletop.com/images/games/">
+            </fieldset>
 
-            <label for="formPlayersIdeal">Players Ideal:</label>
-            <input id="formPlayersIdeal" type="text">
+            <fieldset class="section-b">
+                <h3>Game Info</h3>
+                <hr>
+                <label for="formType">Type:
+                    <small>(seperated by commas i.e Trivia, Card, Board)</small>
+                </label>
+                <input id="formType" type="text">
 
-            <label for="formPlayersMinimum">Players Minimum:</label>
-            <input id="formPlayersMinimum" type="text">
+                <label for="formGenre">Genre:
+                    <small>(seperated by commas i.e Horror, Roleplay, Humour)</small>
+                </label>
+                <input id="formGenre" type="text">
 
-            <label for="formPlayersMax">Players Max:</label>
-            <input id="formPlayersMax" type="text">
+                <label for="formIdeal">Ideal For:
+                    <small>(seperated by commas i.e Groups, Family, Adults)</small>
+                </label>
+                <input id="formIdeal" type="text">
 
-            <label for="formAge">Age:</label>
-            <input id="formAge" type="text">
+                <label for="formAge">Age:</label>
+                <input id="formAge" type="number">
 
-            <label for="formDifficulty">Difficulty:</label>
-            <input id="formDifficulty" type="text">
+                <label for="formDifficulty">Difficulty:</label>
+                <select id="formDifficulty">
+                    <option value="Easy">Easy</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Hard</option>
+                </select>
+            </fieldset>
+            <fieldset class="section-c">
+                <h3>Players &amp; Time</h3>
+                <hr>
+                <label for="formPlayersIdeal">Players Ideal:</label>
+                <input id="formPlayersIdeal" type="number">
 
-            <label for="formSetupTime">Setup Time:</label>
-            <input id="formSetupTime" type="text">
+                <label for="formPlayersMinimum">Players Minimum:</label>
+                <input id="formPlayersMinimum" type="number">
 
-            <label for="formPlayTime">Play Time:</label>
-            <input id="formPlayTime" type="text">
+                <label for="formPlayersMax">Players Max:</label>
+                <input id="formPlayersMax" type="number">
 
-            <label for="formPublishDate">Publish Date:</label>
-            <input id="formPublishDate" type="text">
+                <label for="formSetupTime">Setup Time:</label>
+                <input id="formSetupTime" type="number">
 
-            <label for="formPublisher">Publisher:</label>
-            <input id="formPublisher" type="text">
-           
-            <label for="formExpansion">Expansion:</label>
-            <input id="formExpansion" type="text">
+                <label for="formPlayTime">Play Time:</label>
+                <input id="formPlayTime" type="number">
+            </fieldset>
+            <fieldset class="section-d">
+                <h3>Other Info</h3>
+                <hr>
+                <label for="formPublishDate">Publish Date:</label>
+                <input id="formPublishDate" type="date">
 
-            <label for="formLocation" for="id">Location:</label>
-            <input id="formLocation" type="text">
+                <label for="formPublisher">Publisher:
+                    <small>(seperated by commas)</small>
+                </label>
+                <input id="formPublisher" type="text">
 
-            <a id="formSubmit"> Add Game </a>
+                <label for="formExpansion">Expansion:</label>
+                <input id="formExpansion" type="text">
+
+                <label for="formLocation" for="id">Location:</label>
+                <input id="formLocation" type="text">
+                <a id="formSubmit"> Add Game </a>
+            </fieldset>
+
 
         </form>
 
