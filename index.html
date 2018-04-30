@@ -17,6 +17,7 @@
         <div class="side-bar">
             <div class="heading">
                 <h3>Table Top Dashboard</h3>
+                <img src="images/logo.png" alt="Table Top Logo">
             </div>
             <ul>
                 <li id="viewGamesBtn">
@@ -27,14 +28,14 @@
                     <span>Add Games</span>
                     <i class="fas fa-plus"></i>
                 </li>
-                <li id="editGamesBtn">
+                <!-- <li id="editGamesBtn">
                     <span>Edit Games</span>
                     <i class="far fa-edit"></i>
                 </li>
                 <li id="deleteGamesBtn">
                     <span>Delete Games</span>
                     <i class="far fa-trash-alt"></i>
-                </li>
+                </li> -->
             </ul>
 
 
@@ -43,12 +44,7 @@
 
             <table>
                 <tbody id="viewGamesTable">
-                    <tr>
-                        <th>Name</th>
-                        <th>ID</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
+                  
                 </tbody>
             </table>
 
@@ -141,16 +137,16 @@
     </div>
     <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
     <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyCxPu8HFBXRDWsLhjQWwjVKvznkS1mT5MY",
-            authDomain: "board-game-tabletop.firebaseapp.com",
-            databaseURL: "https://board-game-tabletop.firebaseio.com",
-            projectId: "board-game-tabletop",
-            storageBucket: "",
-            messagingSenderId: "115444661210"
-        };
-        firebase.initializeApp(config);
+         var config = {
+        apiKey: "AIzaSyCxPu8HFBXRDWsLhjQWwjVKvznkS1mT5MY",
+        authDomain: "board-game-tabletop.firebaseapp.com",
+        databaseURL: "https://board-game-tabletop.firebaseio.com",
+        projectId: "board-game-tabletop",
+        storageBucket: "",
+        messagingSenderId: "115444661210"
+    };
+
+    firebase.initializeApp(config);
     </script>
     <script src="dist/js/script.min.js"></script>
 </body>
