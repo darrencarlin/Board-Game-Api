@@ -72,14 +72,14 @@ document.addEventListener('DOMContentLoaded', function () {
         data.on("value", function (snapshot) {
             table.innerHTML = `<tr>
             <th>Name</th>
-            <th>ID</th>
+            <th>Location</th>
             <th>Edit</th>
             <th>Delete</th>
          </tr>`;
             snapshot.forEach(function (game) {
                 table.innerHTML += `<tr id="${game.val().name}">
                                     <td>${game.val().name}</td>
-                                    <td>${game.val().id}</td>
+                                    <td>${game.val().location}</td>
                                     <td class="edit"><i class="far fa-edit"></i></td>
                                     <td class="delete"><i class="far fa-trash-alt"></i></td>
                                 </tr>`
