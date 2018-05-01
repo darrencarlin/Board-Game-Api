@@ -10,6 +10,6 @@ todo:
 * Add Firebase Validation 
 * Add Firebase Login 
 * Build out dashboard
-    * Home page ( displays statistics about database i.e number of games )
+    * Home page ( welcome message, displays statistics about database i.e number of games )
     * View Games Page ( displays table containing all the games with options to edit / delete )
     * ~~Add Games Page ( displays forms to add games to database )~~
