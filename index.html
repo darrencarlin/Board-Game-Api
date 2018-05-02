@@ -14,12 +14,16 @@
 <body>
 
     <div id="app" class="app">
+        <div class="heading">
+            <h3>Table Top Dashboard</h3>
+            <img src="images/logo.png" alt="Table Top Logo">
+        </div>
         <div class="side-bar">
-            <div class="heading">
-                <h3>Table Top Dashboard</h3>
-                <img src="images/logo.png" alt="Table Top Logo">
-            </div>
             <ul>
+                <li id="viewHomeBtn">
+                    <span>Home</span>
+                    <i class="fas fa-home"></i>
+                </li>
                 <li id="viewGamesBtn">
                     <span>View Games</span>
                     <i class="fas fa-eye"></i>
@@ -44,7 +48,7 @@
 
             <table>
                 <tbody id="viewGamesTable">
-                  
+
                 </tbody>
             </table>
 
@@ -128,7 +132,7 @@
 
                 <label for="formLocation" for="id">Location:</label>
                 <input id="formLocation" type="text">
-                <a id="formSubmit"> Add Game </a>
+                <a class="submit-btn" id="formSubmit"> Add Game </a>
             </fieldset>
 
 
@@ -137,16 +141,16 @@
     </div>
     <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
     <script>
-         var config = {
-        apiKey: "AIzaSyCxPu8HFBXRDWsLhjQWwjVKvznkS1mT5MY",
-        authDomain: "board-game-tabletop.firebaseapp.com",
-        databaseURL: "https://board-game-tabletop.firebaseio.com",
-        projectId: "board-game-tabletop",
-        storageBucket: "",
-        messagingSenderId: "115444661210"
-    };
+        var config = {
+            apiKey: "AIzaSyCxPu8HFBXRDWsLhjQWwjVKvznkS1mT5MY",
+            authDomain: "board-game-tabletop.firebaseapp.com",
+            databaseURL: "https://board-game-tabletop.firebaseio.com",
+            projectId: "board-game-tabletop",
+            storageBucket: "",
+            messagingSenderId: "115444661210"
+        };
 
-    firebase.initializeApp(config);
+        firebase.initializeApp(config);
     </script>
     <script src="dist/js/script.min.js"></script>
 </body>

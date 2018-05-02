@@ -4,154 +4,252 @@ body {
     color: $text-color;
 }
 
-.app {
+.heading {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background: $darkblue;
+    color: $darkblue-text;
+    img {
+        height: 50px;
+    }
 }
 
 .side-bar {
-    width: 20%;
-    min-width: 240px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
     background: $darkblue;
     color: $darkblue-text;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    overflow-x: hidden;
-    height: 100%;
-    .heading,
-    ul,
-    li {
-        margin: 1em 0 0 0;
-        list-style: none;
-    }
-    .heading {
-        text-align: center;
-        h3 {
-            margin-bottom: 15px;
-        }
-        img {
-            width: 75px;
-            height: auto;
-        }
+    span {
+        display: none;
     }
     ul {
-        width: 100%;
-        background: #161c26;
-    }
-    li {
-        margin: 1em 2em;
         display: flex;
-        justify-content: space-between;
-        align-content: center;
-        cursor: pointer;
-        &:hover {
-            filter: brightness(1.3)
+        
+        padding: 1em;
+        li {
+            margin: 0 .5em;
+            i {
+                font-size: 1.5em;
+            }
+        }
+    }
+}
+
+form {
+    h3 {
+        margin: .5em 0;
+    }
+    hr {
+        display: none;
+    }
+    fieldset {
+        width: 95%;
+        margin: 0 auto;
+        padding: 1em;
+        border: 0;
+        input,
+        textarea {
+            width: 100%;
+            margin: .5em 0;
+            padding: 1em;
+            border-radius: 3px;
+            border: 1px solid transparent;
+            border-top: none;
+            border-bottom: 1px solid #DDD;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, .39), 0 -1px 1px #FFF, 0 1px 0 #FFF;
+        }
+        .submit-btn {
+            display: inline-block;
+            padding: 1em;
+            border: 1px solid #dfdfdf;
+            width: 100%;
+            margin: 1em auto;
+            text-align: center;
         }
     }
 }
 
 .view-games {
-    width: 80%;
-    margin-left: 20%;
-    tr {
-        transition: all .2s ease;
-        &:hover {
-            background: #d9e3ea;
-        }
-    }
+    width: 100%;
+    margin: 0 auto;
+    padding: .5em;
     table {
         border-collapse: collapse;
-        width: 95%;
-        margin: 1em auto;
+        width: 100%; // margin: 1em auto;
         /* border: 1px solid red; */
     }
     th,
     td {
-        padding: 8px;
+        padding: .5em 0;
         text-align: center;
         border-bottom: 1px solid #ddd;
     }
+    tr>th:first-child,
+    tr>td:first-child {
+        text-align: left;
+    }
+    .fa-edit,
+    .fa-trash-alt {
+        padding: 5px 15px;
+        border-radius: 3px;
+        border: 1px solid transparent;
+        color: #fff;
+    }
+    .fa-edit {
+        background-color: #219cee;
+    }
+    .fa-trash-alt {
+        background-color: #ff385f;
+    }
 }
 
-.form {
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    padding: 1em 2em;
-    width: 80%;
-    margin-left: 20%;
-    fieldset {
-        h3 {
-            margin-bottom: 5px;
-            color: $heading-color;
-        }
-        hr {
-            margin-bottom: 15px;
-        }
+@media screen and (min-width:700px) {
+    .app {
+        display: flex;
+    }
+    .side-bar {
+        width: 20%;
+        min-width: 240px;
         display: flex;
         flex-direction: column;
-        padding: 20px;
-        background: #fff;
+        justify-content: flex-start;
+        align-items: center;
+        background: $darkblue;
+        color: $darkblue-text;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        overflow-x: hidden;
+        height: 100%;
+        .heading,
+        ul,
+        li {
+            margin: 1em 0 0 0;
+            list-style: none;
+        }
+        .heading {
+            text-align: center;
+            h3 {
+                margin-bottom: 15px;
+            }
+            img {
+                width: 75px;
+                height: auto;
+            }
+        }
+        ul {
+            width: 100%;
+            background: #161c26;
+        }
+        li {
+            margin: 1em 2em;
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
+            cursor: pointer;
+            &:hover {
+                filter: brightness(1.3)
+            }
+        }
     }
-    .section-b label:last-of-type {
-        margin-bottom: .5em;
+    .view-games {
+        width: 80%;
+        margin-left: 20%;
+        tr {
+            transition: all .2s ease;
+            &:hover {
+                background: #d9e3ea;
+            }
+        }
+        table {
+            border-collapse: collapse;
+            width: 95%;
+            margin: 1em auto;
+            /* border: 1px solid red; */
+        }
+        th,
+        td {
+            padding: 8px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
     }
-    select {
-        width: 100%;
-        height: 32px;
-        padding: 4px;
-        line-height: 32px;
-        text-indent: 4px;
-        cursor: pointer;
-        background: #fff;
-    }
-    input[type=text],
-    input[type=number],
-    input[type=date],
-    fieldset,
-    textarea {
-        -webkit-appearance: textfield;
-        -moz-appearance: textfield;
-        appearance: textfield;
-        width: 100%;
-        margin: 1em 0;
-        font-size: 1em;
-    }
-    input,
-    select {
-        padding: 10px;
-        border-radius: 3px;
-        border: 1px solid transparent;
-        border-top: none;
-        border-bottom: 1px solid #DDD;
-        box-shadow: inset 0 1px 2px rgba(0, 0, 0, .39), 0 -1px 1px #FFF, 0 1px 0 #FFF;
-    }
-    textarea {
-        resize: vertical;
-        border-radius: 3px;
-        border: 1px solid transparent;
-        border-top: none;
-        border-bottom: 1px solid #DDD;
-        box-shadow: inset 0 1px 2px rgba(0, 0, 0, .39), 0 -1px 1px #FFF, 0 1px 0 #FFF;
-    }
-    a {
-        display: inline-block;
-        padding: 15px;
-        border: 1px solid #dfdfdf;
-        width: 100%;
-        margin: 15px auto;
-        text-align: center;
-        cursor: pointer;
-        transition: all .3s ease-in-out;
-        &:hover {
-            background: $darkblue;
-            color: $darkblue-text;
-            filter: brightness(1.3);
+    .form {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        padding: 1em 2em;
+        width: 80%;
+        margin-left: 20%;
+        fieldset {
+            h3 {
+                margin-bottom: 5px;
+                color: $heading-color;
+            }
+            hr {
+                margin-bottom: 15px;
+            }
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            background: #fff;
+        }
+        .section-b label:last-of-type {
+            margin-bottom: .5em;
+        }
+        select {
+            width: 100%;
+            height: 32px;
+            padding: 4px;
+            line-height: 32px;
+            text-indent: 4px;
+            cursor: pointer;
+            background: #fff;
+        }
+        input[type=text],
+        input[type=number],
+        input[type=date],
+        fieldset,
+        textarea {
+            -webkit-appearance: textfield;
+            -moz-appearance: textfield;
+            appearance: textfield;
+            width: 100%;
+            margin: 1em 0;
+            font-size: 1em;
+        }
+        input,
+        select {
+            padding: 10px;
+            border-radius: 3px;
+            border: 1px solid transparent;
+            border-top: none;
+            border-bottom: 1px solid #DDD;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, .39), 0 -1px 1px #FFF, 0 1px 0 #FFF;
+        }
+        textarea {
+            resize: vertical;
+            border-radius: 3px;
+            border: 1px solid transparent;
+            border-top: none;
+            border-bottom: 1px solid #DDD;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, .39), 0 -1px 1px #FFF, 0 1px 0 #FFF;
+        }
+        a {
+            display: inline-block;
+            padding: 15px;
+            border: 1px solid #dfdfdf;
+            width: 100%;
+            margin: 15px auto;
+            text-align: center;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+            &:hover {
+                background: $darkblue;
+                color: $darkblue-text;
+                filter: brightness(1.3);
+            }
         }
     }
 }
