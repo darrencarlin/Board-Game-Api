@@ -8,10 +8,11 @@ todo:
 * ~~Convert this project into a gulp project for babel~~
 * ~~Add Firebase database~~
 * Add Firebase Validation 
-* Add Firebase Login 
+* Add Firebase Login or Auth0 Login
 * Build out dashboard
     * Home page ( welcome message, displays statistics about database i.e number of games )
     * View Games Page ( displays table containing all the games with options to edit / delete )
     * ~~Add Games Page ( displays forms to add games to database )~~
    
 * Build out UI
+   * Move Home, View, Add menu to bottom of screen instead of top
