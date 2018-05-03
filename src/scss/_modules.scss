@@ -24,8 +24,13 @@ body {
     }
     ul {
         display: flex;
-        
+        position: fixed;
+        bottom: 0;
+        left: 0;
         padding: 1em;
+        background: $darkblue;
+        color: $darkblue-text;
+        width: 100%;
         li {
             margin: 0 .5em;
             i {
@@ -120,8 +125,7 @@ form {
         display: flex;
     }
     .side-bar {
-        width: 20%;
-       // min-width: 240px;
+        width: 20%; // min-width: 240px;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -134,18 +138,15 @@ form {
         left: 0;
         overflow-x: hidden;
         height: 100%;
-        
-       
         .heading,
         ul,
         li {
             margin: .5em 0 0 0;
             list-style: none;
-            
         }
         .heading {
-           display: flex;
-           flex-direction: column;
+            display: flex;
+            flex-direction: column;
             text-align: center;
             h3 {
                 margin-bottom: 15px;
@@ -159,8 +160,9 @@ form {
             width: 100%;
             background: #161c26;
             flex-direction: column;
+            position: initial;
             li {
-                margin:  .5em;
+                margin: .5em;
                 display: flex;
                 justify-content: center;
                 align-content: center;
@@ -170,7 +172,6 @@ form {
                 }
             }
         }
-        
     }
     .view-games {
         width: 80%;
@@ -274,18 +275,14 @@ form {
 }
 
 @media only screen and (min-width: 900px) {
-
     .side-bar {
-
         ul {
             li {
                 justify-content: space-between;
             }
         }
-
         span {
             display: initial;
         }
     }
-
- }
+}
