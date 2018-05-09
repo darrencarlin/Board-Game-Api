@@ -17,3 +17,7 @@ todo:
    
 * Build out UI
    * Move Home, View, Add menu to bottom of screen instead of top
+   
+   
+* UX Stuff
+   * Placeholder text for search should be inofrmative i.e "Search for a horror game"
