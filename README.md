@@ -6,7 +6,7 @@ Project to build a CRUD database with firebase on the backend that has an admin 
 todo:
 
 * ~~Convert this project into a gulp project for babel~~
-* Convert this project to a React project
+* Convert this project to a ~~React project~~ Vue Project :) 
 * ~~Add Firebase database~~
 * Add Firebase Validation 
 * Add Firebase Login or Auth0 Login
